@@ -1,1 +1,62 @@
-<h1> guess the number </h>
+<html>
+<head>
+    <title>Guess The Number</title>
+</head>
+
+<body>
+    <h1>Guess The Number</h1>
+    <script>
+        let num = Math.floor(Math.random() * 11) + 1;
+        let gotIt = false;
+        let guess = prompt("Guess a number between 1 and 10");
+        let counter = 0;
+        let feedback = "";
+        let times = "times"; 
+        /*
+        to increment counter, you can do this;
+        counter++;
+
+        or this:
+
+        counter += 1 
+
+        or this
+
+        counter = counter + 1
+
+        */
+
+        while(gotIt == false) {
+            counter++;
+            if(num == guess){
+                //alert("You got it");
+                if (counter == 1){
+                    times = "time"
+                }
+                feedback = `The correct number was ${num} and you guessed ${counter} ${times}!`;
+
+                alert(feedback);
+                gotIt = true;
+            }else if(num > guess) {//higher
+                guess = prompt("That was too low. Please guess again.");
+            }else if(num > guess) {//lower
+                guess = prompt("That was too high. Please guess again.");
+
+            }else{
+                alert('you should not see this')
+            }
+        }
+
+
+
+
+
+
+
+
+        alert(num);
+
+        //alert("is this working?");
+    </script>
+</body>
+</html>
